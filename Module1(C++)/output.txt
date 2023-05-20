@@ -1,4 +1,1 @@
-I am a Software Engineer
-hello
-world
-100 200
+10.55
