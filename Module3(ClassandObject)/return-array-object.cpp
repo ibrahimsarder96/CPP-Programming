@@ -18,7 +18,7 @@ class Car{
   Car fun()
   {
       char name[100] = "ibrahim";
-      Car volvo(1200, 1972, "volvo", "japan", name);
+      Car volvo(1200, 1972, "BMW", "Germany", name);
       return volvo;
   }
 main()
