@@ -16,5 +16,10 @@ main()
   insert.pop_back(); // easy process works
   insert.pop_back();
   cout<<insert<<endl;
+  string p = "Software engineer";
+  p.erase(4,3); // erase built in function
+  p.replace(0,8,"Developer"); // replace built in function
+  p.insert(1,"ibrahim"); // insert built in function
+  cout<<p<<endl;
   return 0;
 }
