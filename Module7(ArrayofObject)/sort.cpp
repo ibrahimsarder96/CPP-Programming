@@ -15,9 +15,18 @@ main()
     cin>>a[i].roll>>a[i].mark;
     cin.ignore();
   }
+  for(int i = 0; i < 2; i++){
+    for(int j = i+1; j < 3; j++)
+   {
+     if(a[i].mark > a[j].mark){
+      swap(a[i],a[j]);
+    }
+   }
+  }
   for(int i = 0; i < 3; i++)
   {
-    cout<<a[2].name<<" "<<a[2].roll<<" "<<a[2].mark<<endl;
+     cout<<a[i].name<<endl;
   }
+ 
   return 0;
 }
