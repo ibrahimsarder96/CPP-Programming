@@ -3,14 +3,17 @@ using namespace std;
 main()
 {
   int n;
-  cin>> n;
+  cin>>n;
+  getchar();
   string x;
   string s;
-  for(int i = 0; i < n; i++)
-  {
-    getline(cin,s);
-    getline(cin,x);
+ 
+  for(int i = 0; i < n; i++){
+   cin>>x>>s;
   }
-  // cout<<x<<endl<<s;
+ cout<<x<<endl;
+  for(int i = 0; i < n; i++){
+   
+  }
   return 0;
 }
