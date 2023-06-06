@@ -7,6 +7,7 @@ class Students{
   string s;
   int id;
 };
+
 main()
 {
   int n;
@@ -19,15 +20,12 @@ main()
     cin>>a[i].s;
     cin>>a[i].id;
   }
-  if(n>0){
-        for(int j = n - 1; j >= 0; j--){
-        cout<<a[j].id<<endl;
-  }
-   for(int i = 0; i < n; i++)
+  
+ int j = n - 1;
+  for (int i = 0; i < n; i++)
   {
-    cout<<a[i].nm<<" "<<a[i].cls<<" "<<a[i].s<<" "<<endl;  
+    cout << a[i].nm << " " << a[i].cls << " " << a[i].s << " " << a[j--].id << endl;
   }
-     }
  
   return 0;
 }
