@@ -21,26 +21,54 @@ void insert_head_tail(Node *&head, Node* &tail, int val){
       tail = newNode;
 }
 // print function
-void print_linked_list(Node* head){
-  Node* tmp = head;
-  while(tmp != NULL){
-    tmp=tmp->next;
+int print_linked_list(Node* head1, Node*head2){
+  Node* tmp1 = head1;
+  Node* tmp2 = head2;
+  int flag = 0;
+  while(tmp1 != NULL && tmp2 != NULL){
+    if((tmp1 != NULL) != (tmp2 != NULL)){
+      flag=1;
+      return flag;
+    }
+    // cout<<tmp1->val<<" ";
+    // cout<<endl;
+    // cout<<tmp2->val<<" ";
+    tmp1=tmp1->next;
+    tmp2=tmp2->next;
+  
   }
   cout<<endl;
 }
 
 main()
 {
-  Node* head = NULL;
+  Node* head1 = NULL;
+  Node* head2 = NULL;
   Node* tail = NULL;
-  int val;
+  int val1;
+  int flag = 0;
   while(true){
-    cin>>val;
-    if(val == -1){
+    cin>>val1;
+    if(val1 == -1){
       break;
-    }  
-     insert_head_tail(head,tail,val);
+    } 
+    insert_head_tail(head1,tail,val1);
   }
-  print_linked_list(head);
+  cout<<endl;
+  int val2;
+  while(true){
+    cin>>val2;
+    if(val2 == -1){
+      break;
+    } 
+     insert_head_tail(head2,tail,val2);
+  }
+  int ans = print_linked_list(head1, head2);
+  cout<<ans;
+  // if(ans == 1){
+  //   cout<<"YES";
+  // }else{
+  //   cout<<"NO";
+  // }
   return 0;
 }
