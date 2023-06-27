@@ -26,6 +26,14 @@ void countLength(Node* &head1, Node* &head2){
   int cnt2 = 0;
   Node* tmp1 = head1;
   Node* tmp2 = head2;
+  int flag = 0;
+  while(tmp1 != NULL && tmp2 != NULL){
+    if(tmp1->val != tmp2->val){
+      flag=1;
+    }
+    tmp2=tmp2->next;
+    tmp1=tmp1->next;
+  }
   while(tmp1 != NULL){
     cnt1++;
     tmp1=tmp1->next;
@@ -34,7 +42,10 @@ void countLength(Node* &head1, Node* &head2){
     cnt2++;
     tmp2=tmp2->next;
   }
-  if(cnt1 == cnt2){
+  if(flag==1){
+    cout<<"NO";
+  }
+  else if(cnt1 == cnt2){
     cout<<"YES";
   }
   else{
