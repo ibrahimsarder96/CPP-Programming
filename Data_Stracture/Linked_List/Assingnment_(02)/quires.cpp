@@ -10,17 +10,17 @@ class Node{
         }
 };
 // Insert any position---------------
-void  insert_at_position(Node* head, int pos, int v){
-    Node* newNode = new Node(v);
-    Node* tmp = head;
-    for(int i = 1; i < pos - 1; i++){
-      tmp = tmp -> next;
-        return;
-      }
-    newNode->next = tmp->next;
-    tmp->next = newNode;
-}
-// insert head and tail
+// void  insert_at_position(Node* head, int pos, int v){
+//     Node* newNode = new Node(v);
+//     Node* tmp = head;
+//     for(int i = 1; i < pos - 1; i++){
+//       tmp = tmp -> next;
+//         return;
+//       }
+//     newNode->next = tmp->next;
+//     tmp->next = newNode;
+// }
+// // insert head and tail
 void insert_head_tail(Node *&head, Node* &tail, int v){
       Node* newNode = new Node(v);
       if(head == NULL){
@@ -32,7 +32,7 @@ void insert_head_tail(Node *&head, Node* &tail, int v){
       tail->next = newNode;
       tail = newNode;
 }
-// print function
+// // print function
 void print_linked_list(Node* &head){
   Node* tmp = head;
   while(tmp != NULL){
@@ -54,13 +54,15 @@ main()
    if(pos == 0){
     int v;
     cin>>v;
-        insert_at_position(head, pos, v);
+    cout<<pos<<" "<<v;
+        // insert_at_position(head, pos, v);
         insert_head_tail(head, tail, v);
    }
    else if(pos == 1){
     int v;
     cin>>v;
-    insert_at_position(head, pos, v);
+    cout<<pos<<" "<<v;
+    // insert_at_position(head, pos, v);
     insert_head_tail(head, tail, v);
    }
     print_linked_list(head);
