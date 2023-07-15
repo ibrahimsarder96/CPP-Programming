@@ -54,6 +54,8 @@ main()
   b->prev = a;
   b->next = c;
   c->prev = b;
+  int pos, val;
+  cin>>pos, val;
   insert_at_position(head, 1, 100);
   insert_normal(head);
   insert_reverse(tail);
