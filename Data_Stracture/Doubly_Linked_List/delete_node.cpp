@@ -80,11 +80,22 @@ main()
   b->prev = a;
   b->next = c;
   c->prev = b;
-  int pos, val;
-  cin>>pos>>val;
+  int pos;
+  cin>>pos;
   // delete_at_position(head, pos);
- delete_tail(tail);
- delete_head(head);
+  if(pos >= size(head)){
+    cout<<"Invalid"<<endl;
+  }
+  else if(pos == 0){
+    delete_head(head);
+  }
+  else if(pos == size(head)- 1){
+     delete_tail(tail);
+  }
+ else{
+  delete_at_position(head,pos);
+ }
+ 
   insert_normal(head);
   insert_reverse(tail);
   return 0;
