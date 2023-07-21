@@ -48,12 +48,13 @@ main()
  int val;
  while(true){
   cin>>val;
-  if(val == -1)
-  break;
-  print_normal(head);
+  if(val == -1){
+    break;
+  }
+   print_normal(head);
   print_reverse(tail);
-  insert_tail(head,tail,val);
+ 
  }
-
+ 
   return 0;
 }
