@@ -9,6 +9,8 @@ class Node{
           this-> next = NULL;
         }
 };
+
+
 void print_normal(Node* head){
   Node* tmp = head;
   while(tmp != NULL){
@@ -18,25 +20,6 @@ void print_normal(Node* head){
   }
   cout<<endl;
 }
-void  print_reverse(Node* tail){
-  Node* tmp = tail;
-  while(tmp != NULL){
-    cout<<tmp->val<<" ";
-    return;
-  }
-  cout<<endl;
-}
-// tail insert-----------
- void insert_tail(Node *&head, Node *&tail, int val){
-  Node *newNode = new Node(val);
-  if(tail == NULL){
-    head = newNode;
-    tail = newNode;
-    return;
-  }
-  tail->next = newNode;
-  tail = tail->next;
- }
 main()
 {
   Node *head = NULL;
@@ -44,13 +27,18 @@ main()
  int val;
  while(true){
   cin>>val;
-  if(val == -1){
+  if(val == -1){ 
     break;
   }
-   print_normal(head);
-  print_reverse(tail);
- 
+  
  }
- 
+  for(Node* i = head; i->next != NULL; i=i->next){
+  for(Node* j = i->next; j->next != NULL; j=j->next){
+    if(i->val < j->val){
+      swap(i->val,j->val);
+    }
+  }
+ }
+ print_normal(head);
   return 0;
 }
