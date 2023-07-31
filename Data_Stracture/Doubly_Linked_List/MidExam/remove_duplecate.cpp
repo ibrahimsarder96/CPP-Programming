@@ -10,7 +10,6 @@ class Node{
         }
 };
 
-
 void print_normal(Node* head){
   Node* tmp = head;
   while(tmp != NULL){
@@ -27,18 +26,18 @@ main()
  int val;
  while(true){
   cin>>val;
-  if(val == -1){ 
+  if(val == -1)
     break;
-  }
-  
  }
-  for(Node* i = head; i->next != NULL; i=i->next){
-  for(Node* j = i->next; j->next != NULL; j=j->next){
-    if(i->val < j->val){
-      swap(i->val,j->val);
-    }
-  }
+    for(Node *i = head; i->next != NULL; i = i->next){
+    cout<<i->val;
+  // for(Node* j = i->next; j->next != NULL; j=j->next){
+  //   if(i->val < j->val){
+  //     swap(i->val,j->val);
+  //     cout<<i->val;
+  //   }
+  // }
  }
- print_normal(head);
+//  print_normal(head);
   return 0;
 }
