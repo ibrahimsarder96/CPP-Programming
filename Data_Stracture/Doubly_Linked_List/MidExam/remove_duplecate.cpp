@@ -5,20 +5,59 @@ class Node{
         int val;
         Node* next;
         Node(int val){
-          this->val=val;
+          this-> val= val;
           this-> next = NULL;
         }
 };
 
-void print_normal(Node* head){
+// insert tail function-----------
+void insert_at_tail(Node* &head, int v){
+  Node* newNode = new Node(v);
+  if(head == NULL){ // at first come node then it is head
+    head = newNode;
+    return; // return korte hobe
+  }
   Node* tmp = head;
-  while(tmp != NULL){
+  while(tmp->next != NULL){
+    tmp = tmp -> next;
+  }
+  tmp -> next = newNode;   // tmp ekhon last node e
+}
+Node* duplicate_delete(Node* &head){
+        Node* tmp = head;
+        while(tmp->next != NULL){
+            //  cout<<head->next->val;
+            if(tmp->val == tmp->next->val){
+               cout<<tmp->val;
+              Node* del = tmp->next;
+              tmp->next = del->next;
+              delete del;
+            }else{
+              tmp = tmp->next;
+              cout<<tmp->val;
+            }
+          return head;
+        }
+}
+// Node print_linked_list fuction----------------
+Node* print_linked_list(Node* head){
+  if(head == NULL) return head;
+  Node* tmp = head;
+  while(tmp->next != NULL){ 
     cout<<tmp->val<<" ";
+    if(tmp->val == tmp->next->val){
+       cout<<tmp->val<<" ";
+      Node* del = tmp->next;
+      tmp->next = del->next;
+      delete del;
+    }else{
+      cout<<tmp->val<<" ";
+    }
     tmp = tmp->next;
-    return;
   }
   cout<<endl;
 }
+
 main()
 {
   Node *head = NULL;
@@ -26,18 +65,17 @@ main()
  int val;
  while(true){
   cin>>val;
-  if(val == -1)
-    break;
+  if(val == -1) break;
+   insert_at_tail(head,val);
  }
-    for(Node *i = head; i->next != NULL; i = i->next){
-    cout<<i->val;
-  // for(Node* j = i->next; j->next != NULL; j=j->next){
-  //   if(i->val < j->val){
-  //     swap(i->val,j->val);
-  //     cout<<i->val;
-  //   }
-  // }
+ for(Node*i = head; i->next != NULL; i = i->next){
+  for(Node*j = i->next; j != NULL; j = j->next){
+    if(i->val > j->val){
+      swap(i->val, j->val);
+    }
+  }
  }
-//  print_normal(head);
+//  duplicate_delete(head);
+ print_linked_list(head);
   return 0;
 }
