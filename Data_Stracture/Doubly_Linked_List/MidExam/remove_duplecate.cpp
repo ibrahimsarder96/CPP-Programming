@@ -8,7 +8,7 @@ class Node{
           this-> val= val;
           this-> next = NULL;
         }
-};
+      };
 
 // insert tail function-----------
 void insert_at_tail(Node* &head, int v){
@@ -23,37 +23,24 @@ void insert_at_tail(Node* &head, int v){
   }
   tmp -> next = newNode;   // tmp ekhon last node e
 }
-Node* duplicate_delete(Node* &head){
-        Node* tmp = head;
-        while(tmp->next != NULL){
-            //  cout<<head->next->val;
-            if(tmp->val == tmp->next->val){
-               cout<<tmp->val;
-              Node* del = tmp->next;
-              tmp->next = del->next;
-              delete del;
-            }else{
-              tmp = tmp->next;
-              cout<<tmp->val;
-            }
-          return head;
-        }
-}
+
 // Node print_linked_list fuction----------------
 Node* print_linked_list(Node* head){
-  if(head == NULL) return head;
+  // cout<<head->val;
+  if(head == NULL) return head;  // head is null then return
   Node* tmp = head;
-  while(tmp->next != NULL){ 
+  if(tmp->next == NULL){
+    cout<<tmp->val;
+  }
+  while(tmp->next != NULL ){ 
     cout<<tmp->val<<" ";
     if(tmp->val == tmp->next->val){
        cout<<tmp->val<<" ";
-      Node* del = tmp->next;
-      tmp->next = del->next;
-      delete del;
-    }else{
-      cout<<tmp->val<<" ";
+      tmp->next = tmp->next->next;
     }
-    tmp = tmp->next;
+    if(tmp->next == NULL) break;
+    else if(tmp->val != tmp->next->val){
+    }
   }
   cout<<endl;
 }
@@ -62,7 +49,7 @@ main()
 {
   Node *head = NULL;
   Node *tail = NULL;
- int val;
+  int val;
  while(true){
   cin>>val;
   if(val == -1) break;
