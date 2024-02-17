@@ -22,11 +22,24 @@ class Parentheses
         {
           if(c == ')' && st.top() == '(')
           {
-            st.pop()
+            st.pop();
+          }
+          else if(c == '}' && st.top() == '{')
+          {
+            st.pop();
+          }
+          else if(c == '[' && st.top() == ']')
+          {
+            st.pop();
+          }
+          else
+          {
+            return false;
           }
         }
       }
     }
+    return st.empty();
   }
 };
 main()
